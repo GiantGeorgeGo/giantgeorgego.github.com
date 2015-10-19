@@ -8,12 +8,13 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
+title : GGG world
 tagline: Site Tagline
 author :
   name : Zhihang YAN
   email : zhihang.yeah@gmail.com
   github : GiantGeorgeGo
+  twitter : username
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
