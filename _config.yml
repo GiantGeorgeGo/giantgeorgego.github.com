@@ -8,12 +8,20 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
+<<<<<<< HEAD
 title : GG's home
 tagline: Site Tagline
 author :
   name : Zhihang YAN 
+=======
+title : GGG world
+tagline: Site Tagline
+author :
+  name : Zhihang YAN
+>>>>>>> e34180fbbeb086c18726a9700c372fc0ef20c768
   email : zhihang.yeah@gmail.com
   github : GiantGeorgeGo
+  twitter : username
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
