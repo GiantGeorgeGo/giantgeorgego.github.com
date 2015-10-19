@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: Everything mixed is connected! 
 ---
 {% include JB/setup %}
 
