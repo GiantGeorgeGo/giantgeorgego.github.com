@@ -44,10 +44,10 @@ title: Using Android studio for NDK development
        $JDKPath$\bin\javah -jni -d $ModuleFileDir$/src/main/jni $FileClass$
 
        <i>Note:</i>  
-       ** JDKPath - refers to your JDK installation directory.  
-       ** -jni - means generate JNI-style header file (default).  
-       ** -d - output directory, point to your jni directory just crated in step 2.  
-       ** FileClass - com.example.georgeyan.nimes.Avignon. (the package name)
+       *** JDKPath - refers to your JDK installation directory.  
+       *** -jni - means generate JNI-style header file (default).  
+       *** -d - output directory, point to your jni directory just crated in step 2.  
+       *** FileClass - com.example.georgeyan.nimes.Avignon. (the package name)
 
 5. Now you can find the generated header file in your jni ditrctory (app/src/main/jni). The file name is __com_package_name_projectname_module__.h, containing:  
 
