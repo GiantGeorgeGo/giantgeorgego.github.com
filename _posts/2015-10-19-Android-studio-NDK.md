@@ -14,16 +14,16 @@ tagline: "Supporting tagline"
     src  
     ├── androidTest  
     │   └── java  
-    │       └── com  
-    │           └── example  
-    │               └── projectname  
-    │                   └── nimes  
+    │   └── com  
+    │   └── example  
+    │   └── project_name  
+    │   └── module_name  
     ├── main  
     │   ├── java  
     │   │   └── com  
     │   │       └── example  
-    │   │           └── projectname  
-    │   │               └── nimes  
+    │   │           └── project_name  
+    │   │               └── module_name  
     │   ├── jni  
     │   └── res  
     │       ├── drawable  
