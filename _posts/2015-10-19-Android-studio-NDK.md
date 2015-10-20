@@ -12,8 +12,7 @@ title: Using Android studio for NDK development
      app/build/intermediates/classes/debug.  
 
 2. Creat a jni directory in app/src/main/, so you will get:  
-
-```    
+    
     src  
     ├── androidTest  
     │   └── java  
@@ -32,12 +31,11 @@ title: Using Android studio for NDK development
     │   │       ├── drawable  
     │   │      ├── layout  
     │   │       ├── menu  
-     ...
-```
+     ...  
+  
 3. Make an declaration of the native method in the java code (main activity for example):  
 
-
-     native String StringFromJni();  
+   native String StringFromJni();  
 
 4. Generate the JNI header file for the native method declared in step 3.  
    * launch a terminal, go to the class obj directory: __ProjectName__/app/build/intermediates/classes/debug  
@@ -54,17 +52,17 @@ title: Using Android studio for NDK development
 5. Now you can find the generated header file in your jni ditrctory (app/src/main/jni). The file name is __com_package_name_projectname_module__.h, containing:  
 
 
-     JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv *, jobject);  
+   JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv *, jobject);  
 
 6. Now create a c/c++ source file to implement it.  
 
-     JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv * env, jobject ){  
+   JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv * env, jobject ){  
   
-                       return (env)->NewStringUTF("HelloFromJni");
-     }  
+                     return (env)->NewStringUTF("HelloFromJni");
+   }  
 
    Two ways to compile the .so module:  
-   ** gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
+   - gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
              add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
 
                      ndk {  
@@ -75,20 +73,19 @@ title: Using Android studio for NDK development
 	     
 	     android.useDeprecatedNdk=true
 	     
-	     in the __gradle.properties__ if you encounter the build problem.  
+	     in the **gradle.properties** if you encounter the build problem.  
 
-   ** Android.mk: build manually, not pratice using Android Studio.  
+   - Android.mk: build manually, not pratice using Android Studio.  
 
 7. The last thing is using the .so module in the java class.  
 
-            ```
 	    static {  
                      System.loadLibrary("hello-jni");  
             }  
-	    ```
 
    Example:  
    In the Oncreate function:  
+
            ```  
            TextView text = (TextView)findViewById(R.id.hw);  
            
