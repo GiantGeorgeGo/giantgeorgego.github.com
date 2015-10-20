@@ -11,7 +11,8 @@ tagline: "Supporting tagline"
 1. New a simple android application project in the AS.
 2. Creat a jni directory in app/src/main/, so you will get:
 
-   <i>.</i>
-   <i>|-- main</i>
+   .  
+   -- main  
+       -- src
 
 <p>{{ page.date | date_to_string }}</p>
