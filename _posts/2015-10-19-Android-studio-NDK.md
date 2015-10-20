@@ -86,7 +86,7 @@ title: Using Android studio for NDK development
            text.setText(StringFromJni());  
 
 8. Demo on github:  
-           https://github.com/GiantGeorgeGo/Nimes.git
+           [NDK demo: Nimes](https://github.com/GiantGeorgeGo/Nimes.git).  
 
 
 <p>{{ page.date | date_to_string }}</p>
