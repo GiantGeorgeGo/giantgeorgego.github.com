@@ -13,7 +13,7 @@ title: Using Android studio for NDK development
 
 2. Creat a jni directory in app/src/main/, so you will get:  
 
-    ```    
+```    
     src  
     ├── androidTest  
     │   └── java  
@@ -32,9 +32,8 @@ title: Using Android studio for NDK development
     │   │       ├── drawable  
     │   │      ├── layout  
     │   │       ├── menu  
-     ...    
-     
-    ```  
+     ...
+```
 3. Make an declaration of the native method in the java code (main activity for example):  
 
 
