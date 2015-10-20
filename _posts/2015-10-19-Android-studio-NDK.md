@@ -71,9 +71,10 @@ title: Using Android studio for NDK development
 
              add:    
 	     
-	             android.useDeprecatedNdk=true
+                    android.useDeprecatedNdk=true
 	     
-	     in the *gradle.properties* if you encounter the build problem.  
+            in the gradle.properties if you encounter the build problem.   
+  
    * Android.mk: build manually, not pratice using Android Studio.  
 
 7. The last thing is using the .so module in the java class.  
