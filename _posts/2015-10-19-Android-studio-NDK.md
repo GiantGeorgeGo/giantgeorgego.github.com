@@ -62,7 +62,7 @@ title: Using Android studio for NDK development
    }  
 
    Two ways to compile the .so module:  
-   * gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
+   [1] gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
              add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
 
                      ndk {  
@@ -75,7 +75,7 @@ title: Using Android studio for NDK development
 	     
             in the gradle.properties if you encounter the build problem.   
   
-   * Android.mk: build manually, not pratice using Android Studio.  
+   [2] Android.mk: build manually, not pratice using Android Studio.  
 
 7. The last thing is using the .so module in the java class.  
 
