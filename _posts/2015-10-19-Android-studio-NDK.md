@@ -9,10 +9,26 @@ tagline: "Supporting tagline"
 <i>A quick tutorial to NDK development using new version of Android Studio 1.4</i>
 
 1. New a simple android application project in the AS.
-2. Creat a jni directory in app/src/main/, so you will get:
+2. Creat a jni directory in app/src/main/, so you will get:  
 
-   .  
-   -- main  
-       -- src
+    src  
+    ├── androidTest  
+    │   └── java  
+    │       └── com  
+    │           └── example  
+    │               └── projectname  
+    │                   └── nimes  
+    ├── main  
+    │   ├── java  
+    │   │   └── com  
+    │   │       └── example  
+    │   │           └── projectname  
+    │   │               └── nimes  
+    │   ├── jni  
+    │   └── res  
+    │       ├── drawable  
+    │       ├── layout  
+    │       ├── menu  
+     ...  
 
 <p>{{ page.date | date_to_string }}</p>
