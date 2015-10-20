@@ -85,5 +85,8 @@ title: Using Android studio for NDK development
            TextView text = (TextView)findViewById(R.id.hw);  
            text.setText(StringFromJni());  
 
+8. Demo on github:  
+           https://github.com/GiantGeorgeGo/Nimes.git
+
 
 <p>{{ page.date | date_to_string }}</p>
