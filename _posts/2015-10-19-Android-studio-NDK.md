@@ -1,7 +1,6 @@
 ---
 layout: post 
 title: Using Android studio for NDK development
-tagline: "Supporting tagline"
 ---
 {% include JB/setup %}
 
@@ -48,6 +47,42 @@ tagline: "Supporting tagline"
        ** JDKPath - refers to your JDK installation directory.  
        ** -jni - means generate JNI-style header file (default).  
        ** -d - output directory, point to your jni directory just crated in step 2.  
-       ** FileClass - com.example.projectname.modulename. (the package name)
+       ** FileClass - com.example.georgeyan.nimes.Avignon. (the package name)
+
+5. Now you can find the generated header file in your jni ditrctory (app/src/main/jni). The file name is __com_package_name_projectname_module__.h, containing:  
+
+
+    JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv *, jobject);  
+
+6. Now create a c/c++ source file to implement it.  
+
+     JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv * env, jobject ){  
+  
+                       return (env)->NewStringUTF("HelloFromJni");
+     }  
+
+   Two ways to compile the .so module:  
+   ** gradle: if you want more about gradle, refer to this: http://gradle.org/.  
+             add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
+
+                     ndk {  
+                          moduleName "hello-jni"  
+                     }  
+
+             add __android.useDeprecatedNdk=true__ in the gradle.properties if you encounter the build problem.  
+
+   ** Android.mk: build manually, not pratice using Android Studio.  
+
+7. The last thing is using the .so module in the java class.  
+
+            static {  
+                     System.loadLibrary("hello-jni");  
+            }  
+
+   Example:  
+   In the Oncreate function:
+           TextView text = (TextView)findViewById(R.id.hw);  
+           text.setText(StringFromJni());  
+
 
 <p>{{ page.date | date_to_string }}</p>
