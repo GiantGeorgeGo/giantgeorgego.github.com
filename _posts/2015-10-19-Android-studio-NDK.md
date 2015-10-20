@@ -12,7 +12,8 @@ title: Using Android studio for NDK development
      app/build/intermediates/classes/debug.  
 
 2. Creat a jni directory in app/src/main/, so you will get:  
-```  
+
+    ```    
     src  
     ├── androidTest  
     │   └── java  
@@ -32,8 +33,10 @@ title: Using Android studio for NDK development
     │   │      ├── layout  
     │   │       ├── menu  
      ...    
-```
+     
+    ```  
 3. Make an declaration of the native method in the java code (main activity for example):  
+
 
      native String StringFromJni();  
 
@@ -71,11 +74,9 @@ title: Using Android studio for NDK development
 
              add:    
 	     
-	     ```
 	     android.useDeprecatedNdk=true
-	     ```
 	     
-	     in the gradle.properties if you encounter the build problem.  
+	     in the __gradle.properties__ if you encounter the build problem.  
 
    ** Android.mk: build manually, not pratice using Android Studio.  
 
@@ -89,10 +90,11 @@ title: Using Android studio for NDK development
 
    Example:  
    In the Oncreate function:  
-           ```
+           ```  
            TextView text = (TextView)findViewById(R.id.hw);  
+           
            text.setText(StringFromJni());  
-	   ```
+	   ```  
 
 8. Demo on github:  
            [Nimes](https://github.com/GiantGeorgeGo/Nimes.git).  
