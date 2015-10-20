@@ -34,9 +34,9 @@ title: Using Android studio for NDK development
      ...  
   
 3. Make an declaration of the native method in the java code (main activity for example):  
-
-        native String StringFromJni();  
-
+```c
+native String StringFromJni();  
+```
 4. Generate the JNI header file for the native method declared in step 3.  
    * launch a terminal, go to the class obj directory: __ProjectName__/app/build/intermediates/classes/debug  
    * use javah command to generate the c/c++ header files  
