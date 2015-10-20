@@ -14,21 +14,21 @@ tagline: "Supporting tagline"
     src  
     ├── androidTest  
     │   └── java  
-    │   └── com  
-    │   └── example  
-    │   └── project_name  
-    │   └── module_name  
+    │   │   └── com  
+    │   │   │   └── example  
+    │   │   │   │   └── project_name  
+    │   │   │   │   │   └── module_name  
     ├── main  
     │   ├── java  
     │   │   └── com  
-    │   │       └── example  
-    │   │           └── project_name  
-    │   │               └── module_name  
+    │   │   │        └── example  
+    │   │   │   │           └── project_name  
+    │   │   │   │   │               └── module_name  
     │   ├── jni  
     │   └── res  
-    │       ├── drawable  
-    │       ├── layout  
-    │       ├── menu  
+    │   │       ├── drawable  
+    │   │      ├── layout  
+    │   │       ├── menu  
      ...  
 
 <p>{{ page.date | date_to_string }}</p>
