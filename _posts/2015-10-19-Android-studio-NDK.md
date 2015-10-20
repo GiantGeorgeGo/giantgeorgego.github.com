@@ -12,7 +12,7 @@ title: Using Android studio for NDK development
      app/build/intermediates/classes/debug.  
 
 2. Creat a jni directory in app/src/main/, so you will get:  
-```
+```  
     src  
     ├── androidTest  
     │   └── java  
@@ -31,7 +31,7 @@ title: Using Android studio for NDK development
     │   │       ├── drawable  
     │   │      ├── layout  
     │   │       ├── menu  
-     ...  
+     ...    
 ```
 3. Make an declaration of the native method in the java code (main activity for example):  
 
@@ -63,7 +63,7 @@ title: Using Android studio for NDK development
 
    Two ways to compile the .so module:  
    ** gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
-              add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
+             add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
 
                      ndk {  
                           moduleName "hello-jni"  
