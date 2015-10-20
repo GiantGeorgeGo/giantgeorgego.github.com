@@ -69,7 +69,7 @@ title: Using Android studio for NDK development
                           moduleName "hello-jni"  
                      }  
 
-             add __android.useDeprecatedNdk=true__ in the gradle.properties if you encounter the build problem.  
+             add <i>android.useDeprecatedNdk=true</i> in the gradle.properties if you encounter the build problem.  
 
    ** Android.mk: build manually, not pratice using Android Studio.  
 
