@@ -12,7 +12,7 @@ title: Using Android studio for NDK development
      app/build/intermediates/classes/debug.  
 
 2. Creat a jni directory in app/src/main/, so you will get:  
-
+```
     src  
     ├── androidTest  
     │   └── java  
@@ -32,7 +32,7 @@ title: Using Android studio for NDK development
     │   │      ├── layout  
     │   │       ├── menu  
      ...  
-
+```
 3. Make an declaration of the native method in the java code (main activity for example):  
 
      native String StringFromJni();  
@@ -44,15 +44,15 @@ title: Using Android studio for NDK development
        $JDKPath$\bin\javah -jni -d $ModuleFileDir$/src/main/jni $FileClass$
 
        <i>Note:</i>  
-       *** JDKPath - refers to your JDK installation directory.  
-       *** -jni - means generate JNI-style header file (default).  
-       *** -d - output directory, point to your jni directory just crated in step 2.  
-       *** FileClass - com.example.georgeyan.nimes.Avignon. (the package name)
+       __JDKPath__ - refers to your JDK installation directory.  
+       -jni - means generate JNI-style header file (default).  
+       -d - output directory, point to your jni directory just crated in step 2.  
+       __FileClass__ - com.example.georgeyan.nimes.Avignon. (the package name)
 
 5. Now you can find the generated header file in your jni ditrctory (app/src/main/jni). The file name is __com_package_name_projectname_module__.h, containing:  
 
 
-    JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv *, jobject);  
+     JNIEXPORT jstring JNICALL Java_com_example_georgeyan_nimes_Avignon_StringFromJni(JNIEnv *, jobject);  
 
 6. Now create a c/c++ source file to implement it.  
 
@@ -69,24 +69,33 @@ title: Using Android studio for NDK development
                           moduleName "hello-jni"  
                      }  
 
-             add <i>android.useDeprecatedNdk=true</i> in the gradle.properties if you encounter the build problem.  
+             add:    
+	     
+	     ```
+	     android.useDeprecatedNdk=true
+	     ```
+	     
+	     in the gradle.properties if you encounter the build problem.  
 
    ** Android.mk: build manually, not pratice using Android Studio.  
 
 7. The last thing is using the .so module in the java class.  
 
-            static {  
+            ```
+	    static {  
                      System.loadLibrary("hello-jni");  
             }  
+	    ```
 
    Example:  
    In the Oncreate function:  
-           
+           ```
            TextView text = (TextView)findViewById(R.id.hw);  
            text.setText(StringFromJni());  
+	   ```
 
 8. Demo on github:  
-           [NDK demo: Nimes](https://github.com/GiantGeorgeGo/Nimes.git).  
+           [Nimes](https://github.com/GiantGeorgeGo/Nimes.git).  
 
 
 <p>{{ page.date | date_to_string }}</p>
