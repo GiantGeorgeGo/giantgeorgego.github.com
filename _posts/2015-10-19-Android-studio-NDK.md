@@ -16,15 +16,15 @@ tagline: "Supporting tagline"
     │   └── java  
     │   │   └── com  
     │   │   │   └── example  
-    │   │   │   │   └── project_name  
-    │   │   │   │   │   └── module_name  
+    │   │   │   │   └── **project_name**  
+    │   │   │   │   │   └── **module_name**  
     ├── main  
     │   ├── java  
     │   │   └── com  
     │   │   │        └── example  
-    │   │   │   │           └── project_name  
-    │   │   │   │   │               └── module_name  
-    │   ├── jni  
+    │   │   │   │           └── **project_name**  
+    │   │   │   │   │               └── **module_name**  
+    │   ├── **jni**  
     │   └── res  
     │   │       ├── drawable  
     │   │      ├── layout  
