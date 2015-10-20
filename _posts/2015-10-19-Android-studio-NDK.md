@@ -63,17 +63,17 @@ title: Using Android studio for NDK development
 
    Two ways to compile the .so module:  
    [1] gradle: if you want more about gradle, refer to this:[gradle](http://gradle.org/).    
-             add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
+               add the following in the file app/build.gradle, in the __defaultConfig__ bracket:  
 
                      ndk {  
                           moduleName "hello-jni"  
                      }  
 
-             add:    
+               add:    
 	     
-                    android.useDeprecatedNdk=true
-	     
-            in the gradle.properties if you encounter the build problem.   
+                    android.useDeprecatedNdk=true  
+     
+               in the gradle.properties if you encounter the build problem.   
   
    [2] Android.mk: build manually, not pratice using Android Studio.  
 
