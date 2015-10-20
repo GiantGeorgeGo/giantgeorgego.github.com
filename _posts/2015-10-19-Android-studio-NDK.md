@@ -80,7 +80,8 @@ title: Using Android studio for NDK development
             }  
 
    Example:  
-   In the Oncreate function:
+   In the Oncreate function:  
+           
            TextView text = (TextView)findViewById(R.id.hw);  
            text.setText(StringFromJni());  
 
