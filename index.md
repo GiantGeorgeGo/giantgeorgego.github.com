@@ -3,6 +3,8 @@ layout: page
 title: Everything mixed is connected! 
 ---
 {% include JB/setup %}
+<i>github: https://github.com/GiantGeorgeGo</i>  
+<i>email : zhihang.yeah@gmail.com</i>  
 
 <ul class="posts">
   {% for post in site.posts %}
