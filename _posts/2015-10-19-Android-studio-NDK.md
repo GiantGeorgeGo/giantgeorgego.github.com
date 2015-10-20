@@ -3,6 +3,8 @@ layout: post
 title: Using Android studio for NDK development
 tagline: "Supporting tagline"
 ---
+{% include JB/setup %}
+
 <h2>{{ page.title }}</h2>
 <i>A quick tutorial to NDK development using new version of Android Studio 1.4</i>
 
