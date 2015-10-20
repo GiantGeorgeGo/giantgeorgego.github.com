@@ -4,7 +4,6 @@ title: Using Android studio for NDK development
 ---
 {% include JB/setup %}
 
-<h2>{{ page.title }}</h2>
 <i>A quick tutorial to NDK development using new version of Android Studio 1.4</i>
 
 1. New a simple android application project in the AS and build the project. This will generate the class target objects for the java class. The generated objs will be located in:  
