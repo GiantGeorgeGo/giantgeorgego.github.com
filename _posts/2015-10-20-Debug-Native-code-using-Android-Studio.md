@@ -15,6 +15,13 @@ The Android Studio 1.4 has already well equiped with the ndk debugger.
     
 * Gradle configuration file, add the following lines in the app/build.gradle:  
 
+
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+      
       buildTypes {  
         release {  
             minifyEnabled false  
