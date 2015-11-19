@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default 
 title: Debug native code using Android Studio
 ---
 {% include JB/setup %}

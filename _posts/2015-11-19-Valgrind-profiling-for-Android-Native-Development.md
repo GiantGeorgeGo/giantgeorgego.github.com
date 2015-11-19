@@ -1,5 +1,5 @@
 ---
-layout: post 
+layout: default 
 title: Valgrind for Android Native development
 ---
 
@@ -66,7 +66,7 @@ in my case.
 			
 			sudo aptitude install libc6-dbg  
 
-<h2>Hello Valgrind !</h2>
+<h2>2. Hello Valgrind !</h2>
 So now you can using Valgrind to debug your program. The Valgrind tool suite provides a number of debugging and profiling tools that help you make your programs faster and more correct. The most popular of these tools is called Memcheck.
 
 [My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
