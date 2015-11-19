@@ -11,8 +11,8 @@ A quick guide of what valgrind could do: [memcheck functionality](http://www.the
 
 As now there is amount of developpers for NDK development in the filed which:  
 <i>  
-	1. Squeeze extra performance out of a device for computationally intensive applications like games or physics simulations.   
-	2. Reuse your own or other developers' C or C++ libraries.  
+		1. Squeeze extra performance out of a device for computationally intensive applications like games or physics simulations.   
+		2. Reuse your own or other developers' C or C++ libraries.  
 </i>  
 
 So the use of the valgrind for NDK developers is essential, this post could be used as a quick tour about valgrind installation and   
@@ -61,9 +61,68 @@ in my case.
 		valgrind:    On SuSE, openSuSE, Fedora, RHEL:   glibc-debuginfo
 		valgrind:  
 		valgrind:  Cannot continue -- exiting now.  Sorry.
+
+	    which means Ubuntu is lack of libc6-dbg, a good way to install this package is:
+			
+			sudo aptitude install libc6-dbg  
+
+<h2>Hello Valgrind !</h2>
+So now you can using Valgrind to debug your program. The Valgrind tool suite provides a number of debugging and profiling tools that help you make your programs faster and more correct. The most popular of these tools is called Memcheck.
+
+[My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
+
+	#include <stdio.h>
+	int main() {
+
+		int a = 1;
+		a++;
+
+		int b=10;
+		float c = a/b;
+		int *d;
+		int e =*d;
+
+		return 0;
+	}
+
+compile it using g++ with -g or gcc -g with <i>-lstdc++</i>:
   
+	gcc -lstdc++ -o HelloV HelloVal.cpp -g 
 
+or simply:
 
+	g++ -o HelloV HelloVal.cpp -g    
 
+launch HelloV with valgrind:
+
+	dir/to/your/installation/bin/valgrind --leak-check=yes HelloV  
+
+	==3164== Memcheck, a memory error detector
+	==3164== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+	==3164== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+	==3164== Command: /home/likewise-open/SPREADTRUM/george.yan/Nimes/keep-C/valgrind_ndk/HelloV
+	==3164== 
+	==3164== Use of uninitialised value of size 8
+	==3164==    at 0x400606: main (HelloVal.cpp:9)
+	==3164== 
+	c=0.000 
+	==3164== 
+	==3164== HEAP SUMMARY:
+	==3164==     in use at exit: 72,704 bytes in 1 blocks
+	==3164==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated
+	==3164== 
+	==3164== LEAK SUMMARY:
+	==3164==    definitely lost: 0 bytes in 0 blocks
+	==3164==    indirectly lost: 0 bytes in 0 blocks
+	==3164==      possibly lost: 0 bytes in 0 blocks
+	==3164==    still reachable: 72,704 bytes in 1 blocks
+	==3164==         suppressed: 0 bytes in 0 blocks
+	==3164== Rerun with --leak-check=full to see details of leaked memory
+	==3164== 
+	==3164== For counts of detected and suppressed errors, rerun with: -v
+	==3164== Use --track-origins=yes to see where uninitialised values come from
+	==3164== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
+
+	which says I have use of uninitialised value.
 
 <p>{{ page.date | date_to_string }}</p>
