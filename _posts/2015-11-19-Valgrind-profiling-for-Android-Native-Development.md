@@ -123,6 +123,11 @@ launch HelloV with valgrind:
 			==3164== Use --track-origins=yes to see where uninitialised values come from
 			==3164== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
 
-	which says I have use of uninitialised value.
+			which says I have use of uninitialised value.
+
+<h2>3. Valgrind configuration for android native development</h2>
+I would highly recommend you to read valgrind's [README.android](http://valgrind.org/docs/manual/dist.readme-android.html), which give a detailed discussion of this.
+
+
 
 <p>{{ page.date | date_to_string }}</p>

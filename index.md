@@ -3,7 +3,7 @@ layout: page
 title: O Captain! My Captain! 
 ---
 {% include JB/setup %}
-<i>github: https://github.com/GiantGeorgeGo</i>  
+<i>github: [https://github.com/GiantGeorgeGo](https://github.com/GiantGeorgeGo)</i>  
 <i>email : zhihang.yeah@gmail.com</i>  
 
 <ul class="posts">
