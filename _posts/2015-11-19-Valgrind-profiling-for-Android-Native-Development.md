@@ -72,20 +72,15 @@ So now you can using Valgrind to debug your program. The Valgrind tool suite pro
 [My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
 
 {% highlight c++ %}  
-  
-	#include <stdio.h>
-	int main() {
+   
+#include <stdio.h>
+int main() {
 
-		int a = 1;
-		a++;
+	int *d;
+	int e =*d;
 
-		int b=10;
-		float c = a/b;
-		int *d;
-		int e =*d;
-
-		return 0;
-	}
+	return 0;
+}
 {% endhighlight %}
 
 
