@@ -3,9 +3,9 @@ layout: default
 title: Valgrind for Android Native development
 ---
 
-[Valgrind](http://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that   
-can automatically detect many memory management and threading bugs, and  profile your programs in detail. You can also use Valgrind  
-to build new tools.
+> [Valgrind](http://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that  
+> can automatically detect many memory management and threading bugs, and  profile your programs in detail. You can also use Valgrind  
+> to build new tools.
 
 A quick guide of what valgrind could do: [memcheck functionality](http://www.thegeekstuff.com/2011/11/valgrind-memcheck/)!  
 
@@ -39,28 +39,28 @@ in my case.
 
 	(6) After step 5, in my case, the result shows:
 
-		valgrind:  Fatal error at startup: a function redirection
-		valgrind:  which is mandatory for this platform-tool combination
-		valgrind:  cannot be set up.  Details of the redirection are:
-		valgrind:  
-		valgrind:  A must-be-redirected function
-		valgrind:  whose name matches the pattern:      strlen
-		valgrind:  in an object with soname matching:   ld-linux.so.2
-		valgrind:  was not found whilst processing
-		valgrind:  symbols from the object with soname: ld-linux.so.2
-		valgrind:  
-		valgrind:  Possible fixes: (1, short term): install glibc's debuginfo
-		valgrind:  package on this machine.  (2, longer term): ask the packagers
-		valgrind:  for your Linux distribution to please in future ship a non-
-		valgrind:  stripped ld.so (or whatever the dynamic linker .so is called)
-		valgrind:  that exports the above-named function using the standard
-		valgrind:  calling conventions for this platform.  The package you need
-		valgrind:  to install for fix (1) is called
-		valgrind:  
-		valgrind:    On Debian, Ubuntu:                 libc6-dbg
-		valgrind:    On SuSE, openSuSE, Fedora, RHEL:   glibc-debuginfo
-		valgrind:  
-		valgrind:  Cannot continue -- exiting now.  Sorry.
+		 valgrind:  Fatal error at startup: a function redirection
+		 valgrind:  which is mandatory for this platform-tool combination
+		 valgrind:  cannot be set up.  Details of the redirection are:
+		 valgrind:  
+		 valgrind:  A must-be-redirected function
+		 valgrind:  whose name matches the pattern:      strlen
+		 valgrind:  in an object with soname matching:   ld-linux.so.2
+		 valgrind:  was not found whilst processing
+		 valgrind:  symbols from the object with soname: ld-linux.so.2
+		 valgrind:  
+		 valgrind:  Possible fixes: (1, short term): install glibc's debuginfo
+		 valgrind:  package on this machine.  (2, longer term): ask the packagers
+		 valgrind:  for your Linux distribution to please in future ship a non-
+		 valgrind:  stripped ld.so (or whatever the dynamic linker .so is called)
+		 valgrind:  that exports the above-named function using the standard
+		 valgrind:  calling conventions for this platform.  The package you need
+		 valgrind:  to install for fix (1) is called
+		 valgrind:  
+		 valgrind:    On Debian, Ubuntu:                 libc6-dbg
+		 valgrind:    On SuSE, openSuSE, Fedora, RHEL:   glibc-debuginfo
+		 valgrind:  
+		 valgrind:  Cannot continue -- exiting now.  Sorry.
 
 	    which means Ubuntu is lack of libc6-dbg, a good way to install this package is:
 			
@@ -71,18 +71,14 @@ So now you can using Valgrind to debug your program. The Valgrind tool suite pro
 
 [My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
 
-{% highlight c++ %}  
-   
-#include <stdio.h>
-int main() {
+	#include <stdio.h>
+	int main() {
 
-	int *d;
-	int e =*d;
+		int *d;
+		int e =*d;
 
-	return 0;
-}
-{% endhighlight %}
-
+		return 0;
+	}
 
 compile it using g++ with -g or gcc -g with <i>-lstdc++</i>:
   
@@ -102,7 +98,7 @@ launch HelloV with valgrind:
 			==3164== Command: /home/likewise-open/SPREADTRUM/george.yan/Nimes/keep-C/valgrind_ndk/HelloV
 			==3164== 
 			==3164== Use of uninitialised value of size 8
-			==3164==    at 0x400606: main (HelloVal.cpp:9)
+			==3164==    at 0x400606: main (HelloVal.cpp:5)
 			==3164== 
 			c=0.000 
 			==3164== 
@@ -125,8 +121,10 @@ launch HelloV with valgrind:
 			which says I have use of uninitialised value.
 
 <h2>3. Valgrind configuration for android native development</h2>
-I would highly recommend you to read valgrind's [README.android](http://valgrind.org/docs/manual/dist.readme-android.html), which give a detailed discussion of this.
+I would highly recommend you to read valgrind's [README.android](http://valgrind.org/docs/manual/dist.readme-android.html), which give a detailed discussion of this. And The HelloValgrind example is based on my Ubuntu's gcc/g++ toolchain which is generally by default. As for the cross compilation, you need to specify the tool chain used for your target architecture, more info about the android buid system, please refer to also [**Getting Started with the NDK**](http://developer.android.com/ndk/guides/index.html).
 
 
+
+./configure CC="$CC" CXX="$CXX" CPPFLAGS="-DANDROID_HARDWARE_generic" --prefix=/home/likewise-open/SPREADTRUM/george.yan/tool_tip/my_android_valgrind --host=armv7-unknown-linux --target=armv7-unknown-linux --with-tmpdir=/sdcard
 
 <p>{{ page.date | date_to_string }}</p>
