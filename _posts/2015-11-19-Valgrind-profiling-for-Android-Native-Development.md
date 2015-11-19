@@ -95,33 +95,33 @@ or simply:
 
 launch HelloV with valgrind:
 
-	dir/to/your/installation/bin/valgrind --leak-check=yes HelloV  
+		dir/to/your/installation/bin/valgrind --leak-check=yes HelloV  
 
-	==3164== Memcheck, a memory error detector
-	==3164== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-	==3164== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-	==3164== Command: /home/likewise-open/SPREADTRUM/george.yan/Nimes/keep-C/valgrind_ndk/HelloV
-	==3164== 
-	==3164== Use of uninitialised value of size 8
-	==3164==    at 0x400606: main (HelloVal.cpp:9)
-	==3164== 
-	c=0.000 
-	==3164== 
-	==3164== HEAP SUMMARY:
-	==3164==     in use at exit: 72,704 bytes in 1 blocks
-	==3164==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated
-	==3164== 
-	==3164== LEAK SUMMARY:
-	==3164==    definitely lost: 0 bytes in 0 blocks
-	==3164==    indirectly lost: 0 bytes in 0 blocks
-	==3164==      possibly lost: 0 bytes in 0 blocks
-	==3164==    still reachable: 72,704 bytes in 1 blocks
-	==3164==         suppressed: 0 bytes in 0 blocks
-	==3164== Rerun with --leak-check=full to see details of leaked memory
-	==3164== 
-	==3164== For counts of detected and suppressed errors, rerun with: -v
-	==3164== Use --track-origins=yes to see where uninitialised values come from
-	==3164== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
+			==3164== Memcheck, a memory error detector
+			==3164== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+			==3164== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+			==3164== Command: /home/likewise-open/SPREADTRUM/george.yan/Nimes/keep-C/valgrind_ndk/HelloV
+			==3164== 
+			==3164== Use of uninitialised value of size 8
+			==3164==    at 0x400606: main (HelloVal.cpp:9)
+			==3164== 
+			c=0.000 
+			==3164== 
+			==3164== HEAP SUMMARY:
+			==3164==     in use at exit: 72,704 bytes in 1 blocks
+			==3164==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated
+			==3164== 
+			==3164== LEAK SUMMARY:
+			==3164==    definitely lost: 0 bytes in 0 blocks
+			==3164==    indirectly lost: 0 bytes in 0 blocks
+			==3164==      possibly lost: 0 bytes in 0 blocks
+			==3164==    still reachable: 72,704 bytes in 1 blocks
+			==3164==         suppressed: 0 bytes in 0 blocks
+			==3164== Rerun with --leak-check=full to see details of leaked memory
+			==3164== 
+			==3164== For counts of detected and suppressed errors, rerun with: -v
+			==3164== Use --track-origins=yes to see where uninitialised values come from
+			==3164== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
 
 	which says I have use of uninitialised value.
 
