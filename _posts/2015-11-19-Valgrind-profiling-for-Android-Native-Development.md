@@ -71,7 +71,8 @@ So now you can using Valgrind to debug your program. The Valgrind tool suite pro
 
 [My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
 
-{% highlight c++ %}
+{% highlight c++ %}  
+
 	#include <stdio.h>
 	int main() {
 
