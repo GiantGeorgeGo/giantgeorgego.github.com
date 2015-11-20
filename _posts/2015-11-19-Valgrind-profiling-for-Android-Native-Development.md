@@ -3,9 +3,7 @@ layout: default
 title: Valgrind for Android Native development
 ---
 
-> [Valgrind](http://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that  
-> can automatically detect many memory management and threading bugs, and  profile your programs in detail. You can also use Valgrind  
-> to build new tools.
+[Valgrind](http://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that can automatically detect many memory management and threading bugs, and  profile your programs in detail. You can also use Valgrind to build new tools.
 
 A quick guide of what valgrind could do: [memcheck functionality](http://www.thegeekstuff.com/2011/11/valgrind-memcheck/)!  
 
@@ -67,7 +65,7 @@ in my case.
 			sudo aptitude install libc6-dbg  
 
 <h2>2. Hello Valgrind !</h2>
-So now you can using Valgrind to debug your program. The Valgrind tool suite provides a number of debugging and profiling tools that help you make your programs faster and more correct. The most popular of these tools is called Memcheck.
+So now you can using Valgrind to debug your program. The Valgrind tool suite provides a number of debugging and profiling tools that help you make your programs faster and more correct.    The most popular of these tools is called Memcheck.
 
 [My code](https://github.com/GiantGeorgeGo/keep-C/blob/master/valgrind_ndk/HelloVal.cpp) HelloVal.cpp:     
 
@@ -123,8 +121,28 @@ launch HelloV with valgrind:
 <h2>3. Valgrind configuration for android native development</h2>
 I would highly recommend you to read valgrind's [README.android](http://valgrind.org/docs/manual/dist.readme-android.html), which give a detailed discussion of this. And The HelloValgrind example is based on my Ubuntu's gcc/g++ toolchain which is generally by default. As for the cross compilation, you need to specify the tool chain used for your target architecture, more info about the android buid system, please refer to also [**Getting Started with the NDK**](http://developer.android.com/ndk/guides/index.html).
 
+Ok, here we go.
++ Download the latest [NDK](http://developer.android.com/ndk/downloads/index.html), what in this post used is version android-ndk-r10e-linux-x86_64.bin for Ubuntu. You should choose the right one for your cases.  
++ Make a [standalone toochain](http://developer.android.com/ndk/guides/standalone_toolchain.html).
+	mkdir path/to/my-android-toolchain
+	cd /path/to/ndk
+	./build/tools/make-standalone-toolchain.sh --arch=arm --platform=__android-16__ --install-dir=path/to/my-android-toolchain  
+	<i>[Native api level](http://developer.android.com/ndk/guides/stable_apis.html)</i>  
 
++ Setup some paths for valgrind configuration in your __.bashrc__  
 
-./configure CC="$CC" CXX="$CXX" CPPFLAGS="-DANDROID_HARDWARE_generic" --prefix=/home/likewise-open/SPREADTRUM/george.yan/tool_tip/my_android_valgrind --host=armv7-unknown-linux --target=armv7-unknown-linux --with-tmpdir=/sdcard
+	export MY_TOOL_CHAIN=/home/likewise-open/SPREADTRUM/george.yan/tool_tip/my_android_toolchain
+	export TOOL_BIN=$MY_TOOL_CHAIN/bin
+	export SYS=$MY_TOOL_CHAIN/sysroot
+	export AR=$TOOL_BIN/arm-linux-androideabi-ar
+	export LD=$TOOL_BIN/arm-linux-androideabi-ld
+	CC="$TOOL_BIN/arm-linux-androideabi-gcc --sysroot=$SYS"
+	export CC
+	CXX="$TOOL_BIN/arm-linux-androideabi-g++ --sysroot=$SYS"
+ 
++ Goto your valgrind installation path, and configure
+
+	./configure CC="$CC" CXX="$CXX" CPPFLAGS="-DANDROID_HARDWARE_generic" --prefix=__/data/local/my_android_valgrind__ --host=armv7-unknown-linux --target=armv7-unknown-linux --with-tmpdir=/sdcard
+
 
 <p>{{ page.date | date_to_string }}</p>
