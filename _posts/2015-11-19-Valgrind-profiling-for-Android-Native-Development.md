@@ -144,5 +144,4 @@ Ok, here we go.
 
 	./configure CC="$CC" CXX="$CXX" CPPFLAGS="-DANDROID_HARDWARE_generic" --prefix=__/data/local/my_android_valgrind__ --host=armv7-unknown-linux --target=armv7-unknown-linux --with-tmpdir=/sdcard
 
-
 <p>{{ page.date | date_to_string }}</p>
