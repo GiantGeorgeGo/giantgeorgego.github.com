@@ -121,8 +121,9 @@ launch HelloV with valgrind:
 <h2>3. Valgrind configuration for android native development</h2>
 I would highly recommend you to read valgrind's [README.android](http://valgrind.org/docs/manual/dist.readme-android.html), which give a detailed discussion of this. And The HelloValgrind example is based on my Ubuntu's gcc/g++ toolchain which is generally by default. As for the cross compilation, you need to specify the tool chain used for your target architecture, more info about the android buid system, please refer to also [**Getting Started with the NDK**](http://developer.android.com/ndk/guides/index.html).
 
-Ok, here we go.
+Ok, here we go.  
 + Download the latest [NDK](http://developer.android.com/ndk/downloads/index.html), what in this post used is version android-ndk-r10e-linux-x86_64.bin for Ubuntu. You should choose the right one for your cases.  
+
 + Make a [standalone toochain](http://developer.android.com/ndk/guides/standalone_toolchain.html).
 	mkdir path/to/my-android-toolchain
 	cd /path/to/ndk
@@ -143,6 +144,5 @@ Ok, here we go.
 + Goto your valgrind installation path, and configure
 
 	./configure CC="$CC" CXX="$CXX" CPPFLAGS="-DANDROID_HARDWARE_generic" --prefix=__/data/local/my_android_valgrind__ --host=armv7-unknown-linux --target=armv7-unknown-linux --with-tmpdir=/sdcard
-
 
 <p>{{ page.date | date_to_string }}</p>
