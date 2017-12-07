@@ -19,7 +19,7 @@ title: Introduce two methods of calculate triple sum equal zero question
 	  [-1, -1, 2]
 	 ]
 
-   //N^2 * logN number of 3sum 0 = 70 - better time spent = 0.029919s
+   N^2 * logN number of 3sum 0 = 70 - better time spent = 0.029919s
 
 	int tri_sum_better(int data[], int size) {
 	  int ret = 0;
@@ -57,7 +57,7 @@ title: Introduce two methods of calculate triple sum equal zero question
 	}
 
 Source code on github:  
-           [Code](https://github.com/GiantGeorgeGo/data-struct-and-algorithm/blob/master/3sum0.c).
+	[Code](https://github.com/GiantGeorgeGo/data-struct-and-algorithm/blob/master/3sum0.c).
 
 
 <p>{{ page.date | date_to_string }}</p>
