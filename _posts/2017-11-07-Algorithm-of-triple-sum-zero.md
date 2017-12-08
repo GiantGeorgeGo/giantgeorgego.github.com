@@ -13,13 +13,19 @@ title: Introduce two methods of calculate triple sum equal zero question
 
    For example, given array S = [-1, 0, 1, 2, -1, -4],
 
-	A solution set is:
-	[
-	  [-1, 0, 1],
-	  [-1, -1, 2]
-	 ]
+		A solution set is:
+		[
+		  [-1, 0, 1],
+		  [-1, -1, 2]
+		 ]
 
-+ N^2 * logN number of 3sum 0 = 70 - better time spent = 0.029919s
+
+  Here below compares two algorithms with time complexity and the experimental time compare:
+
+
++ N^2 * logN
+  number of 3sum 0 = 70
+  time spent = 0.029919s
 
 	int tri_sum_better(int data[], int size) {
 	  int ret = 0;
@@ -39,7 +45,9 @@ title: Introduce two methods of calculate triple sum equal zero question
 	  return ret / 3;
 	}
 
-+ N^3   number of 3sum 0 = 70 - time spent = 0.361940s
++ N^3
+ number of 3sum 0 = 70
+ time spent = 0.361940s
 
 	int tri_sum_brute(int data[], int size) {
 	  int ret = 0;
